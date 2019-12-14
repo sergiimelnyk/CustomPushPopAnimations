@@ -9,7 +9,16 @@
 import UIKit
 
 final class SecondViewController: UIViewController {
-
+    
+    @IBOutlet weak var button: UIButton!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        button.titleLabel?.numberOfLines = 2
+        button.titleLabel?.textAlignment = .center
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -26,7 +35,7 @@ final class SecondViewController: UIViewController {
             return
         }
         
-        navigationController.resetCustomAnimations()
+//        navigationController.resetCustomAnimations()
         
         let thirdViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ThirdViewController")
         navigationController.pushViewController(thirdViewController, animated: true)
